@@ -1,0 +1,91 @@
+<h1 align="center">Ajout d'un nouveau Article</h1>
+<form #myForm="ngForm" (ngSubmit)="createArticle(myForm)">
+  <div class="form-group">
+    <label for="articleLabel">Label</label>
+    <input
+      ngModel
+      name="articleLabel"
+      size="20"
+      type="text"
+      class="form-control"
+      id="articleLabel"
+    />
+  </div>
+  <div class="form-group">
+    <label for="articlePrice">Price</label>
+    <input
+      ngModel
+      name="articlePrice"
+      size="20"
+      type="text"
+      class="form-control"
+      id="articlePrice"
+    />
+  </div>
+  <div class="form-group">
+    <label for="articlePicture">Picture</label>
+    <input
+      ngModel
+      name="articlePicture"
+      size="20"
+      type="text"
+      class="form-control"
+      id="articlePicture"
+    />
+  </div>
+  <div class="form-group">
+    <label for="providerName">Name</label>
+    <input
+      ngModel
+      name="providerName"
+      size="20"
+      type="text"
+      class="form-control"
+      id="articlePicture"
+    />
+  </div>
+  <!--div class="form-group">
+    <label for="articleProvider">Provider</label>
+    <select formControlName="providerId">
+      <option [ngValue]="null" disabled>Select Country</option>
+      <option *ngFor="let pr of providers">{{pr.name}}</option>
+    </select>
+  </div-->
+
+  <!--mat-form-field appearance="fill">
+    <mat-label>Toppings</mat-label>
+    <mat-select [formControl]="toppings" multiple>
+      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    </mat-select>
+  </mat-form-field-->
+
+  <div class="form-group">
+    <label for="articlePhotoFace">Photo Face</label>
+    <input
+      ngModel
+      name="articlePhotoFace"
+      size="20"
+      type="text"
+      class="form-control"
+      id="providerAdress"
+    />
+  </div>
+  <table align="center" class="table table-striped">
+    <tr>
+    <th>Name</th>
+    <th>Adress</th>
+    <th>Email</th>
+    <th>Suppression</th>
+    <th>Modification</th>
+  </tr>
+
+  <tr *ngFor="let provider of providers">
+    <td>{{provider.name}}</td>
+    <td>{{provider.adress}}</td>
+    <td>{{provider.email}}</td>
+      </tr>
+  </table>
+
+  <button class="btn btn-primary">Ajouter</button>
+
+</form>

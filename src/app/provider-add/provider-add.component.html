@@ -1,0 +1,38 @@
+<h1 align="center">Ajout d'un nouveau Provider</h1>
+<form #myForm="ngForm" (ngSubmit)="createProvider(myForm)">
+  <div class="form-group">
+    <label for="providerName">Name</label>
+    <input
+      ngModel
+      name="providerName"
+      size="20"
+      type="text"
+      class="form-control"
+      id="providerName"
+    />
+  </div>
+  <div class="form-group">
+    <label for="providerEmail">Email</label>
+    <input
+      ngModel
+      name="providerEmail"
+      size="20"
+      type="text"
+      class="form-control"
+      id="providerEmail"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="providerAdress">Adresse</label>
+    <input
+      ngModel
+      name="providerAdress"
+      size="20"
+      type="text"
+      class="form-control"
+      id="providerAdress"
+    />
+  </div>
+  <button class="btn btn-primary">Ajouter</button>
+</form>
