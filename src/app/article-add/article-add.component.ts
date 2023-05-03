@@ -25,7 +25,6 @@ export class ArticleAddComponent {
   }
 
   createArticle(myForm:any){
-    console.log("myFormmyForm "+['provider.id']);
 
     this.serviceArticles.createArticle(myForm).subscribe(
       response=>{
