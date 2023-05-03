@@ -11,6 +11,7 @@ import { ProviderListComponent } from '../provider-list/provider-list.component'
 })
 export class ArticleAddComponent {
   providers : any;
+  idProvider : any;
   constructor(private serviceArticles:ArticlesServicesService,private serviceProviders:ProvidersService, private router:Router) { }
 
   ngOnInit(): void {
@@ -24,14 +25,21 @@ export class ArticleAddComponent {
   }
 
   createArticle(myForm:any){
+    console.log("myFormmyForm "+['provider.id']);
 
     this.serviceArticles.createArticle(myForm).subscribe(
       response=>{
+
         console.log(response);
         this.router.navigate(['listArticle']);
 
       }
     );
 
+  }
+
+  filter(data:any){
+    this.idProvider = data.value;
+     console.log(data.value);
   }
 }

@@ -40,6 +40,6 @@ this.refreshListProviders();
       }
 
       updateProvider(myObj:any){
-        this.router.navigate(['lupdateArticle'+ '/' +myObj['id']]);
+        this.router.navigate(['updateProvider'+ '/' +myObj['id']]);
       }
 }

@@ -29,8 +29,9 @@ export class ArticlesServicesService {
       price: myForm.value.articlePrice,
       picture: myForm.value.articlePicture,
       photoFace: myForm.value.articlePhotoFace,
+      providerName: myForm.value.providerName,
     };
-    return this.http.post(this.urlArticles + '/add', this.article);
+    return this.http.post(this.urlArticles + '/add/'+myForm.value.providerId, this.article);
   }
 
 

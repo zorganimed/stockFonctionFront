@@ -14,6 +14,10 @@ import { FormsModule } from '@angular/forms';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleUpdateComponent } from './article-update/article-update.component';
 import { ArticleAddComponent } from './article-add/article-add.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +36,10 @@ import { ArticleAddComponent } from './article-add/article-add.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
