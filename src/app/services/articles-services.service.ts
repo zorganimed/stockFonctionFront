@@ -15,8 +15,10 @@ export class ArticlesServicesService {
     return this.http.get(this.urlArticles+'/list');
    }
 
-   updateArticle(myObj: any) {
-    return this.http.put(this.urlArticles + '/' + myObj['id'], myObj);
+   updateArticle(myObj: any,id:any) {
+    console.log("id article "+myObj['id']);
+    console.log("id idProvider  "+id);
+    return this.http.put(this.urlArticles + '/update/'+id+'/' + myObj['id'], myObj);
   }
 
   deleteArticle(myObj: any) {
@@ -32,6 +34,10 @@ export class ArticlesServicesService {
       providerName: myForm.value.providerName,
     };
     return this.http.post(this.urlArticles + '/add/'+myForm.value.providerId, this.article);
+  }
+
+  getArticles(id: any) {
+    return this.http.get(this.urlArticles + '/' + id);
   }
 
 

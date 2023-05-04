@@ -1,4 +1,6 @@
-<h1 align="center">Ajout d'un nouveau Article</h1>
+
+  <h1 align="center">Ajout d'un nouveau Article</h1>
+<div class="container">
 <form #myForm="ngForm" (ngSubmit)="createArticle(myForm)">
   <div class="form-group">
     <label for="articleLabel">Label</label>
@@ -33,16 +35,6 @@
       id="articlePicture"
     />
   </div>
-  <!--div class="form-group">
-    <label for="articleProvider">Provider</label>
-    <select formControlName="providerId">
-      <option [ngValue]="null" disabled>Select Country</option>
-      <option *ngFor="let pr of providers">{{pr.name}}</option>
-    </select>
-  </div-->
-
-
-
   <div class="form-group">
     <label for="articlePhotoFace">Photo Face</label>
     <input
@@ -54,20 +46,17 @@
       id="articlePhotoFace"
     />
   </div>
-
-  <div class="form-group">
-    <label for="providerId">Provider</label>
-  <mat-form-field appearance="fill">
-    <mat-label></mat-label>
+    <mat-form-field>
+    <mat-label>Provider</mat-label>
     <mat-select [(ngModel)]="idProvider" name="providerId" id="providerId">
       <mat-option *ngFor="let provider of providers"
-       [value]="provider.id">
+      [value]="provider.id">
         {{provider.name}}
       </mat-option>
     </mat-select>
   </mat-form-field>
-  </div>
-  <button class="btn btn-primary">Ajouter</button>
+   <button class="btn btn-primary">Ajouter</button>
 </form>
+</div>
 
 

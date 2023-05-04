@@ -32,8 +32,9 @@ this.refreshListArticles();
     );
       }
 
-      updateArticle(myObj:any){
-        this.router.navigate(['updateArticle'+ '/' +myObj['id']]);
+      updateArticle(myObj:any, providerId:any){
+
+        this.router.navigate(['updateArticle'+ '/' +myObj['id']+ '/' +providerId] );
       }
 
 }
