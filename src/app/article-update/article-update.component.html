@@ -56,7 +56,7 @@
       id="providerId"
     />
   </div-->
-  <div class="form-group">
+  <!--div class="form-group">
     <label for="providerName">Name Provider</label>
     <input
       [(ngModel)]="name"
@@ -67,16 +67,16 @@
       class="form-control"
       id="providerName"
     />
-  </div>
-  <!--mat-form-field>
-    <mat-label>Provider</mat-label>
-    <mat-select [(ngModel)]="idProvider" name="providerId" id="providerId">
+  </div-->
+  <mat-form-field>
+    <mat-label></mat-label>
+    <mat-select [(ngModel)]="idProvider" name="providerId" id="" >
       <mat-option *ngFor="let provider of providers"
-       value="{{idProvider}}">
+       [value]="provider.id">
         {{provider.name}}
       </mat-option>
     </mat-select>
-  </!--mat-form-field>
-  <input [(ngModel)]="id" name="articleId" type="hidden" /-->
+  </mat-form-field>
+  <input [(ngModel)]="id" name="articleId" type="hidden"/>
   <button class="btn btn-primary">Mise à jour</button>
 </form>

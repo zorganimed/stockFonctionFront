@@ -19,7 +19,7 @@ export class ArticleUpdateComponent {
   public photoFace:any;
   public providerId:any;
   providers : any;
-  public providerToUpdate : any;
+ // public providerToUpdate : any;
 
 
   constructor(
@@ -32,7 +32,8 @@ export class ArticleUpdateComponent {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params) => {
       this.id = params.get('idArticle');
-      this.idProvider = params.get('idProvider');
+      //this.idProvider = params.get('idProvider');
+
     });
 
      this.articleToUpdate = this.serviceArticles
@@ -42,20 +43,16 @@ export class ArticleUpdateComponent {
       this.price = response['price'];
       this.picture = response['picture'];
       this.photoFace = response['photoFace'];
-      this.providerId = response['providerId'];
-       console.log("this.providerId  "+this.idProvider);
-       this.providerToUpdate = this.serviceProviders
+      this.idProvider = response['provider']['id'];
+
+    /*this.providerToUpdate = this.serviceProviders
     .getProvider(this.idProvider)
     .subscribe((response: any) => {
-      console.log("response name "+response['name']);
-      this.name = response['name'];
-      console.log("this.namebh "+this.name);
-    });
-    console.log("this.name "+this.name);
-      this.serviceProviders.listProviders().subscribe(
+       this.name = response['name'];
+     });*/
+       this.serviceProviders.listProviders().subscribe(
         response=>{
-          console.log(response);
-          this.providers = response;
+           this.providers = response;
         }
       );
 
@@ -78,4 +75,6 @@ updateArticle(id:any) {
       this.router.navigate(['listArticle']);
     });
 }
+
+
 }

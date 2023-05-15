@@ -32,9 +32,9 @@ this.refreshListArticles();
     );
       }
 
-      updateArticle(myObj:any, providerId:any){
+      updateArticle(myObj:any){
 
-        this.router.navigate(['updateArticle'+ '/' +myObj['id']+ '/' +providerId] );
+        this.router.navigate(['updateArticle'+ '/' +myObj['id'] ]);
       }
 
 }

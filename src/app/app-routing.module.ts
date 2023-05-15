@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'updateProvider/:id', component: ProviderUpdateComponent },
   { path: 'listProvider', component: ProviderListComponent },
   { path: 'listArticle', component: ArticleListComponent },
-  { path: 'updateArticle/:idArticle/:idProvider', component: ArticleUpdateComponent },
+  { path: 'updateArticle/:idArticle', component: ArticleUpdateComponent },
   { path: 'addArticle', component: ArticleAddComponent },
 ];
 
