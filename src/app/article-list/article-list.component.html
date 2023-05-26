@@ -14,6 +14,10 @@
     <td>{{article.price}}</td>
     <td>{{article.picture}}</td>
     <td>{{article.provider.name}}</td>
+    <td>{{article.id}}</td>
+    <td>
+      <img src="{{urlPhoto+article.id}}" width="150"/>
+    </td>
      <td><button (click)="deleteArticle(article)" type="button" class="btn btn-outline-danger">Supprimer</button></td>
     <td><button (click)="updateArticle(article)" class="btn btn-outline-warning">Update</button></td>
 

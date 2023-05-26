@@ -10,6 +10,7 @@ import { ArticlesServicesService } from '../services/articles-services.service';
 })
 export class ArticleListComponent {
   articles : any;
+  urlPhoto: string = 'http://127.0.0.1:8080/articles/photoProduct/';
 
   constructor(private serviceArticles:ArticlesServicesService, private router:Router){}
   ngOnInit(): void {

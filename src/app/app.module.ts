@@ -17,6 +17,8 @@ import { ArticleAddComponent } from './article-add/article-add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 
@@ -41,7 +43,8 @@ import { MatSelectModule } from '@angular/material/select';
     FormsModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
 
   ],
   providers: [],

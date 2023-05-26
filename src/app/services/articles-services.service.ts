@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +40,18 @@ export class ArticlesServicesService {
   getArticles(id: any) {
     return this.http.get(this.urlArticles + '/' + id);
   }
+
+  uploadPhotoProduct(file:File, idProduct:any): Observable<HttpEvent<{}>>{
+    let formdata : FormData = new FormData();
+    formdata.append('file',file);
+
+    const req = new HttpRequest('POST', this.urlArticles+'/uploadPhoto/'+idProduct,formdata,{
+    reportProgress: true,
+    responseType: 'text'
+
+    }) ;
+    return this.http.request(req);
+      }
 
 
 }

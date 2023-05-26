@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ProvidersService } from '../services/providers.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticlesServicesService } from '../services/articles-services.service';
+import { HttpEventType, HttpResponse } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-article-update',
@@ -19,12 +21,20 @@ export class ArticleUpdateComponent {
   public photoFace:any;
   public providerId:any;
   providers : any;
+  editPhoto: boolean=false;
+   currentArticle : any;
+  progress:number=0;
+  currentProduct:any;
+ selectedFiles:any;
+ currentFileUpload:any;
+ timestamp:number=0;
  // public providerToUpdate : any;
+ urlPhoto: string = 'http://127.0.0.1:8080/articles/photoProduct/';
 
 
   constructor(
     private serviceProviders: ProvidersService,
-    private serviceArticles:ArticlesServicesService,
+    public serviceArticles:ArticlesServicesService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
@@ -76,5 +86,48 @@ updateArticle(id:any) {
     });
 }
 
+onEditPhoto(id:any){
+  console.log("msg",id);
+  this.currentArticle=this.serviceArticles.getArticles(this.id).subscribe((response: any) => {
+
+  });
+  console.log("equal ",this.currentArticle==this.serviceArticles.getArticles(this.id).subscribe((response: any) => {
+    this.label = response['label'];
+    console.log("label",response['label']);
+    console.log("sec label",this.label);
+  }))
+  this.editPhoto = true;
+}
+
+onSelectedFile(event:any){
+this.selectedFiles = event.target.files;
+}
+
+uploadPhoto(){
+  this.progress = 0;
+this.currentFileUpload =this.selectedFiles.item(0);
+
+this.serviceArticles.uploadPhotoProduct(this.currentFileUpload, this.id).subscribe(res=>{
+if(res.type === HttpEventType.UploadProgress){
+if (res.total) {
+        const total: number = res.total;
+        this.progress = Math.round(100 * res.loaded / total);
+    }
+console.log(this.progress);
+}else if(res instanceof HttpResponse ){
+
+//this.getProducts('/products/search/selectedProducts');
+this.timestamp = Date.now();
+}
+},err=>{
+alert("Problème de téléchargement...");
+})
+
+this.selectedFiles = undefined
+}
+
+getTs(){
+  return this.timestamp;
+  }
 
 }
